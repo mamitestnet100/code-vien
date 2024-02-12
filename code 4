@@ -1,0 +1,20 @@
+# web_scraper.py
+import requests
+from bs4 import BeautifulSoup
+
+def web_scraper():
+    # Veri çekilecek web sitesinin URL'sini belirtin
+    url = "https://example.com"
+
+    # Web sayfasını indirin
+    response = requests.get(url)
+
+    # Hata kontrolü
+    if response.status_code == 200:
+        # HTML içeriğini BeautifulSoup kullanarak analiz edin
+        soup = BeautifulSoup(response.text, 'html.parser')
+
+        # Örneğin, başlık etiketlerini çekelim
+        basliklar = soup.find_all('h2')
+
+   
